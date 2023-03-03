@@ -1,0 +1,199 @@
+How to insatll and run Automation setup on Mac
+
+Step 1 : Install java JDK
+		-set environment variables
+		-JAVA_HOME
+		-PATH
+		
+To check Java is installed or not  : 
+		java -version
+		javac -version
+
+
+check for Environment variables
+	1. echo $AJVA_HOME : shows java installed path
+	2. if variables not set :
+		-cd ~/
+		-ls -l
+		-cat .bash_profile (M2_HOME, PATH ,JAVA_HOME should be present)	
+		
+		-if not then :- [ touch ~/.bash_profile ] to create the profile
+		-[if you're using catalina then use .zprofile instead of bash_profile]===
+		-first check java path :-  ls -l ,(see the JDK )
+		-open by vi ~/.bash_profile
+		-press i for insert mode and then copy the JDK path
+		-example (export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk path/Contents/Home)
+		-press escape :wq!
+
+		-now if we do echo $JAVA_HOME
+
+To switch java versions
+		-export JAVA_HOME='/usr/libexec/java_home -v 1.9'
+ 
+
+Step 2  :  Install Homebrew(missing package manager)
+		- google homebrew [https://brew.sh/]
+		-run the given command on the homepage
+		-[/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"]
+
+
+Step 3 : install node and npm 
+		-brew install node
+
+-------------------------------------------------------------------------------------------------------------------------
+Step 4 : install Appium
+{
+http://appium.io/
+
+Step 1 : Check if node is installed on your system
+    node -v
+
+Step 2 : Install node.js
+    https://nodejs.org/en/download/
+    https://brew.sh/
+    brew install node
+
+Step 3 : Check if node is installed
+    node -v
+    npm -v
+
+Step 4 : Install appium
+    npm install -g appium
+
+Step 5 : Check appium is installed
+    appium -v
+
+Step 6 : Start appium
+    appium
+
+Installing appium with appium desktop client
+
+Step 1 : Download appium desktop client - http://appium.io/
+   https://github.com/appium/appium-desktop
+
+Step 2 : Double click on the .dmg file to install appium desktop client
+
+Step 3 : Start appium desktop client
+
+
+Appium-Doctor
+https://www.npmjs.com/package/appium-...
+https://github.com/appium/appium-doctor
+
+npm install appium-doctor -g
+
+
+How to uninstall appium
+
+If installed through node.js
+npm uninstall -g appium
+
+If installed Appium Desktop Client
+Delete the app
+}
+---------------------------------------------------------------------------------------------------------------------
+Step 5 : Install XCODE 
+	-Xcode is the development and debug environment for MAC
+	-it provides required tools, files for dev/automation for Mac and IOS apps
+
+Can do with Appstore
+
+or with Command-Line
+	-Run command  : xcode-select --install
+
+Step 6 : Create Apple ID
+
+Step 7 : install Carthage (can also google) [Decentralised dependency manager]
+	-brew install Carthage
+
+in order to launch WebdriverAgent , your macOS will need to have Carthage installed
+(Not needed for automation in Android)
+
+
+Step 9: Initialize WebDriverAgent project
+	-On terminal cd to WebDriverAgent folder
+	-WebDriverAgent driver will be found in /path/where/installed/lib/node_modules/appium/node_modules/appium-xcuitest-driver/WebDriverAgent 
+
+For Appium Desktop
+	-/Applications/Appium.app/Contents/Resources/app/node_modules/appium/node_modules/appium-xcuitest-driver/WebDriverAgent 
+
+For Appium Installed through node
+	-/usr/local/lib/node_modules/appium/node_modules/appium-xcuitest-driver/WedDriverAgent
+	-mkdir -p Resources/WebDriverAgent.bundle
+	-./Scripts/bootstrap.sh -d
+
+Note: this command needs Carthage to be installed
+
+Step 10: Open WebDriverAgent.xcodeproj in Xcode 
+
+Project name : WebDriverAgent.xcodeproj
+Location : 
+
+For Appium Desktop
+	-/Applications/Appium.app/Contents/Resources/app/node_modules/appium/node_modules/appium-xcuitest-driver/WebDriverAgent 
+
+For Appium Installed through node
+	-/usr/local/lib/node_modules/appium/node_modules/appium-xcuitest-driver/WedDriverAgent
+
+	-https://github.com/appium/appium/issues/12586
+
+Step 11: Under the project in Xcode
+
+For WebDriverAgentLib and WebDriverAgentRunner targets, go to general tab and select "Automatically manage signing", and then select your Development Team 
+
+Xcode may fail to create a provisioning profile for the WebDriverAgentRunner target: 
+
+	-Failed to create a provisioning profile
+	-No profile for ‘…..’ were found 
+
+	-manually change the bundle id for the target by going into the "Build Settings" tab, and changing the "Product Bundle Identifier" from 	com.Facebook.WebDriverAgentRunner to something that Xcode will accept: 
+
+	-Going back to the "General" tab for the WebDriverAgentRunner target, you should now see that it has created a provisioning profile and all is well: 
+
+	-Clean - Build - Run
+
+	-Finally, you can verify that everything works. Build the project: 
+	-xcodebuild -project WebDriverAgent.xcodeproj -scheme WebDriverAgentRunner -destination 'id=udid' test 
+ 
+	-udid = device UDID
+
+To get the udid of the real device connected 
+
+	-A9F18306-6B22-442B-99F4-F217A5EE8D38
+	-xcodebuild -project WebDriverAgent.xcodeproj -scheme WebDriverAgentRunner -destination 'id=A9F18306-6B22-442B-99F4-F217A5EE8D38' test 
+ 
+	-npm install -g ios-deploy
+	-ios-deploy -c 
+
+OR
+	-instruments -s devices
+
+
+Step 12: Create a project and add desired capabilities for automation on iOS
+
+	-deviceName
+	-platformName
+	-platformVersion
+	-app
+
+	-Open Eclipse
+	-Create a new maven project or use any existing maven project
+	-Add maven dependencies 
+ 	-appium 
+ 	-selenium
+
+  DesiredCapabilities cap = new DesiredCapabilities();
+  
+  cap.setCapability("platformName", "iOS");
+  cap.setCapability("platformVersion", "11.4");
+  cap.setCapability("deviceName", "iPhone 8");
+  cap.setCapability(CapabilityType.BROWSER_NAME, "safari");
+  cap.setCapability("app", “location of .app or .ipa file“);
+ 
+  URL url = new URL("http://127.0.0.1:4723/wd/hub");
+  
+  IOSDriver driver = new IOSDriver(url, cap);
+  
+
+
+

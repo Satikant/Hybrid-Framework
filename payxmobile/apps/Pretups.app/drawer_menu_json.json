@@ -1,0 +1,41 @@
+{
+    "hamburgerDetail": [
+        {
+            "headerName": "profile_menu_name_my_hierarchy",
+            "headerImage": "ic_my_hierarchy",
+            "description": "profile_menu_description_make_calls_or_message_to_distributors_or_sales",
+            "forwardIcon": "ic_arrow_next",
+            "lineSeparatorView": true
+        },
+        {
+            "headerName": "profile_menu_name_my_Complaint",
+            "headerImage": "ic_complaint",
+            "description": "profile_menu_description_get_help_from_us",
+            "forwardIcon": "ic_arrow_next",
+            "lineSeparatorView": true
+        },
+        {
+            "headerName": "profile_menu_name_other_user_balances",
+            "headerImage": "ic_other_user_balance",
+            "description": "profile_menu_description_check_balances_of_other_retailer",
+            "forwardIcon": "ic_arrow_next",
+            "lineSeparatorView": false
+        },
+        {
+            "headerName": "profile_menu_name_settings",
+            "isStaticHeader": true
+        },
+        {
+            "headerName": "profile_menu_name_change_pin",
+            "headerImage": "ic_change_pin"
+        },
+        {
+            "headerName": "profile_menu_name_change_language",
+            "headerImage": "ic_change_language"
+        },
+        {
+            "headerName": "profile_menu_name_logout",
+            "headerImage": "ic_logout"
+        }
+    ]
+}

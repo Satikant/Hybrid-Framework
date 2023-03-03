@@ -1,0 +1,170 @@
+{
+    "documentList": [
+        {
+            "documentCode": "PASSPORT",
+            "documentLocalName": "mobiquity_passportString_label",
+            "documentField": [
+                        {
+                          "type": "TEXT",
+                          "placeholder": "uploaddocument_idno_text",
+                          "regex": "(?!\\s*$).+",
+                          "keyBoardType": "NUMBERPAD|ALPHANUMERIC",
+                          "leftItems": [
+                          ],
+                          "rightItems": [
+                          ],
+                          "maxLegth": 30,
+                          "apiTag": "kycIdValue",
+                          "kycGracePeriod": "PASSPORT_GP"
+                        },
+                        {
+                          "type": "DATE",
+                          "placeholder": "uploaddocument_expiry_text",
+                          "regex": "(?!\\s*$).+",
+                          "keyBoardType": "NUMBERPAD|ALPHANUMERIC",
+                          "leftItems": [
+                          ],
+                          "rightItems": [
+                              "selfregistration_calendar_icon"
+                          ],
+                          "maxLegth": 30,
+                          "apiTag": "kycExpiryDate",
+                          "kycGracePeriod": "PASSPORT_GP"
+                        }
+                      ]
+        },
+        {
+            "documentCode": "NATIONAL_ID",
+            "documentLocalName": "mobiquity_nationalIdString_label",
+            "documentField" : [
+                {
+                  "type": "TEXT",
+                  "placeholder": "uploaddocument_idno_text",
+                  "regex": "(?!\\s*$).+",
+                  "keyBoardType": "NUMBERPAD|ALPHANUMERIC",
+                  "leftItems": [
+                  ],
+                  "rightItems": [
+                  ],
+                  "maxLegth": 30,
+                  "apiTag": "kycIdValue",
+                  "kycGracePeriod": "NATIONAL_ID_GP"
+                }
+            ]
+        },
+        {
+            "documentCode": "DRIVER_CARD",
+            "documentLocalName": "mobiquity_dlIDString_label",
+            "documentField": [
+                        {
+                          "type": "TEXT",
+                          "placeholder": "uploaddocument_idno_text",
+                          "regex": "(?!\\s*$).+",
+                          "keyBoardType": "NUMBERPAD|ALPHANUMERIC",
+                          "leftItems": [
+                          ],
+                          "rightItems": [
+                          ],
+                          "maxLegth": 30,
+                          "apiTag": "kycIdValue",
+                          "kycGracePeriod": "DRIVER_CARD_GP"
+                        },
+                        {
+                          "type": "DATE",
+                          "placeholder": "uploaddocument_expiry_text",
+                          "regex": "(?!\\s*$).+",
+                          "keyBoardType": "NUMBERPAD|ALPHANUMERIC",
+                          "leftItems": [
+                          ],
+                          "rightItems": [
+                              "selfregistration_calendar_icon"
+                          ],
+                          "maxLegth": 30,
+                          "apiTag": "kycExpiryDate",
+                          "kycGracePeriod": "DRIVER_CARD_GP"
+                        }
+                      ]
+            
+        },
+        {
+            "documentCode": "PAN_CARD",
+            "documentLocalName": "mobiquity_pancardString_label",
+            "documentField" : [
+                {
+                  "type": "TEXT",
+                  "placeholder": "uploaddocument_idno_text",
+                  "regex": "(?!\\s*$).+",
+                  "keyBoardType": "NUMBERPAD|ALPHANUMERIC",
+                  "leftItems": [
+                  ],
+                  "rightItems": [
+                  ],
+                  "maxLegth": 30,
+                  "apiTag": "kycIdValue",
+                  "kycGracePeriod": "PAN_CARD_GP"
+                }
+            ]
+            
+        },
+        {
+            "documentCode": "SSN",
+            "documentLocalName": "mobiquity_ssnString_label",
+            "documentField" : [
+                {
+                  "type": "TEXT",
+                  "placeholder": "uploaddocument_idno_text",
+                  "regex": "(?!\\s*$).+",
+                  "keyBoardType": "NUMBERPAD|ALPHANUMERIC",
+                  "leftItems": [
+                  ],
+                  "rightItems": [
+                      "selfregistration_calendar_icon"
+                  ],
+                  "maxLegth": 30,
+                  "apiTag": "kycIdValue",
+                  "kycGracePeriod": "SSN_GP"
+                }
+            ]
+        },
+        {
+            "documentCode": "GOVT_ID",
+            "documentLocalName": "mobiquity_govtIdString_label",
+            "documentField" : [
+                {
+                  "type": "TEXT",
+                  "placeholder": "uploaddocument_idno_text",
+                  "regex": "(?!\\s*$).+",
+                  "keyBoardType": "NUMBERPAD|ALPHANUMERIC",
+                  "leftItems": [
+                  ],
+                  "rightItems": [
+                      "selfregistration_calendar_icon"
+                  ],
+                  "maxLegth": 30,
+                  "apiTag": "kycIdValue",
+                  "kycGracePeriod": "GOVT_ID_GP"
+                }
+            ]
+        },
+        {
+            "documentCode": "VOTER_CARD",
+            "documentLocalName": "mobiquity_voterCardString_label",
+            "documentField" : [
+                {
+                  "type": "TEXT",
+                  "placeholder": "uploaddocument_idno_text",
+                  "regex": "(?!\\s*$).+",
+                  "keyBoardType": "NUMBERPAD|ALPHANUMERIC",
+                  "leftItems": [
+                  ],
+                  "rightItems": [
+                      "selfregistration_calendar_icon"
+                  ],
+                  "maxLegth": 30,
+                  "apiTag": "kycIdValue",
+                  "kycGracePeriod": "VOTER_CARD_GP"
+                }
+            ]
+        }
+    ]
+}

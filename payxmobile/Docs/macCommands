@@ -1,0 +1,4 @@
+1. xcrun xctrace list devices
+2. /opt/homebrew/lib/node_modules/appium-webdriveragent
+3. xcodebuild -project WebDriverAgent.xcodeproj -scheme WebDriverAgentRunner -destination 'id=00008110-000604362E05801E' test -allowProvisioningUpdates
+4. adb  -s emulator-5554 push   /Users/ayushsnghcool/Desktop/walletproject/apps/ndpc_consumer_core.apk /sdcard

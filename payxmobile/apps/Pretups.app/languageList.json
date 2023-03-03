@@ -1,0 +1,14 @@
+{
+    "languageDetail": [
+        {
+            "languageName": "English",
+            "languageCode": "0",
+            "languageCodeForLocalization": "en"
+        },
+        {
+            "languageName": "عربى",
+            "languageCode": "4",
+            "languageCodeForLocalization": "ar"
+        }
+    ]
+}
